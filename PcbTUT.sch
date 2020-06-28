@@ -14,17 +14,6 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L MCU_Microchip_ATmega:ATmega32U4-AU U1
-U 1 1 5EF7BB6E
-P 2500 3200
-F 0 "U1" H 2500 1311 50  0000 C CNN
-F 1 "ATmega32U4-AU" H 2500 1220 50  0000 C CNN
-F 2 "Package_QFP:TQFP-44_10x10mm_P0.8mm" H 2500 3200 50  0001 C CIN
-F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7766-8-bit-AVR-ATmega16U4-32U4_Datasheet.pdf" H 2500 3200 50  0001 C CNN
-	1    2500 3200
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:+5V #PWR0101
 U 1 1 5EF7F9A9
 P 2500 1050
@@ -40,8 +29,6 @@ Wire Wire Line
 Wire Wire Line
 	2400 1400 2500 1400
 Connection ~ 2500 1400
-Wire Wire Line
-	2500 1400 2500 1050
 $Comp
 L power:GND #PWR0102
 U 1 1 5EF83B5A
@@ -53,11 +40,6 @@ F 3 "" H 2050 5000 50  0001 C CNN
 	1    2050 5000
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2500 5000 2400 5000
-Wire Wire Line
-	2400 5000 2050 5000
-Connection ~ 2400 5000
 $Comp
 L Device:R_Small R1
 U 1 1 5EF8469C
@@ -80,10 +62,6 @@ F 3 "" H 3950 3800 50  0001 C CNN
 	1    3950 3800
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3100 3800 3500 3800
-Wire Wire Line
-	3700 3800 3950 3800
 $Comp
 L Device:R_Small R2
 U 1 1 5EF888D7
@@ -242,21 +220,6 @@ $EndComp
 Wire Wire Line
 	1900 2500 1700 2500
 $Comp
-L Device:Crystal_GND24_Small Y1
-U 1 1 5EF9C258
-P 900 2000
-F 0 "Y1" V 854 2144 50  0000 L CNN
-F 1 "16Mhz" V 945 2144 50  0000 L CNN
-F 2 "Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm" H 900 2000 50  0001 C CNN
-F 3 "~" H 900 2000 50  0001 C CNN
-	1    900  2000
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	1900 1900 900  1900
-Wire Wire Line
-	1900 2100 900  2100
-$Comp
 L power:GND #PWR0108
 U 1 1 5EFA06B3
 P 550 2300
@@ -289,34 +252,6 @@ F 3 "~" H 700 2100 50  0001 C CNN
 	1    700  2100
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	900  1900 900  1700
-Wire Wire Line
-	900  1700 750  1700
-Connection ~ 900  1900
-Wire Wire Line
-	550  1700 550  2100
-Wire Wire Line
-	600  2100 550  2100
-Connection ~ 550  2100
-Wire Wire Line
-	550  2100 550  2300
-Wire Wire Line
-	800  2100 900  2100
-Connection ~ 900  2100
-Wire Wire Line
-	800  2000 800  2100
-Wire Wire Line
-	800  2300 550  2300
-Connection ~ 800  2100
-Wire Wire Line
-	800  2100 800  2300
-Connection ~ 550  2300
-Wire Wire Line
-	1000 2000 1000 2300
-Wire Wire Line
-	1000 2300 800  2300
-Connection ~ 800  2300
 $Comp
 L power:GND #PWR0109
 U 1 1 5EFAFE40
@@ -439,19 +374,14 @@ Wire Wire Line
 	1950 6150 1750 6150
 Wire Wire Line
 	1750 6100 1750 6150
-Connection ~ 1750 6150
-Wire Wire Line
-	1750 6150 1400 6150
 Wire Wire Line
 	2150 6150 2350 6150
-Text GLabel 1500 6250 2    50   Input ~ 0
-D-
 Text GLabel 1500 6350 2    50   Input ~ 0
+D-
+Text GLabel 1500 6450 2    50   Input ~ 0
 D+
 Wire Wire Line
 	1500 6350 1400 6350
-Wire Wire Line
-	1400 6250 1500 6250
 $Comp
 L MX_Alps_Hybrid:MX-NoLED MX0
 U 1 1 5EFC6D22
@@ -576,20 +506,97 @@ Text GLabel 3500 6000 0    50   Input ~ 0
 ROW0
 Text GLabel 3500 6700 0    50   Input ~ 0
 ROW1
-Text GLabel 3300 2200 2    50   Input ~ 0
-COL0
 Text GLabel 3300 2100 2    50   Input ~ 0
+COL0
+Text GLabel 3300 3500 2    50   Input ~ 0
 COL1
 Wire Wire Line
 	3300 2100 3100 2100
-Wire Wire Line
-	3300 2200 3100 2200
-Text GLabel 3300 2300 2    50   Input ~ 0
-ROW0
-Text GLabel 3300 3600 2    50   Input ~ 0
+Text GLabel 3300 2200 2    50   Input ~ 0
 ROW1
 Wire Wire Line
-	3100 3600 3300 3600
+	550  1700 550  2100
 Wire Wire Line
-	3300 2300 3100 2300
+	950  2100 1900 2100
+Wire Wire Line
+	950  2050 950  2100
+$Comp
+L Device:Crystal_GND24_Small Y1
+U 1 1 5EF9C258
+P 950 1950
+F 0 "Y1" V 904 2094 50  0000 L CNN
+F 1 "16Mhz" V 995 2094 50  0000 L CNN
+F 2 "Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm" H 950 1950 50  0001 C CNN
+F 3 "~" H 950 1950 50  0001 C CNN
+	1    950  1950
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1900 1800 950  1800
+Wire Wire Line
+	950  1800 950  1850
+Wire Wire Line
+	600  2100 550  2100
+Connection ~ 550  2100
+Wire Wire Line
+	550  2100 550  2300
+Wire Wire Line
+	850  2300 550  2300
+Wire Wire Line
+	850  1950 850  2200
+Connection ~ 550  2300
+Wire Wire Line
+	1050 1950 1050 2200
+Wire Wire Line
+	1050 2200 850  2200
+Connection ~ 850  2200
+Wire Wire Line
+	850  2200 850  2300
+Wire Wire Line
+	800  2100 950  2100
+Connection ~ 950  2100
+Wire Wire Line
+	950  1800 950  1700
+Wire Wire Line
+	950  1700 750  1700
+Connection ~ 950  1800
+Connection ~ 2400 5000
+Wire Wire Line
+	2400 5000 2050 5000
+Wire Wire Line
+	2500 5000 2400 5000
+Wire Wire Line
+	2500 1400 2500 1050
+Wire Wire Line
+	1900 1900 1900 1800
+$Comp
+L MCU_Microchip_ATmega:ATmega32U4-AU U1
+U 1 1 5EF7BB6E
+P 2500 3200
+F 0 "U1" H 2500 1311 50  0000 C CNN
+F 1 "ATmega32U4-AU" H 2500 1220 50  0000 C CNN
+F 2 "Package_QFP:TQFP-44_10x10mm_P0.8mm" H 2500 3200 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7766-8-bit-AVR-ATmega16U4-32U4_Datasheet.pdf" H 2500 3200 50  0001 C CNN
+	1    2500 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3300 3300 3100 3300
+Text GLabel 3300 3300 2    50   Input ~ 0
+ROW0
+Wire Wire Line
+	3700 3800 3950 3800
+Wire Wire Line
+	3100 3800 3500 3800
+Wire Wire Line
+	3100 3500 3300 3500
+Wire Wire Line
+	1500 6450 1400 6450
+Wire Wire Line
+	1750 6150 1750 6250
+Wire Wire Line
+	1750 6250 1400 6250
+Connection ~ 1750 6150
+Wire Wire Line
+	3300 2200 3100 2200
 $EndSCHEMATC
